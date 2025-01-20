@@ -12,9 +12,6 @@ export default function Header() {
                 <SignedOut>
                     <Link href={"/sign-in"}>Sign in</Link>
                 </SignedOut>
-                <li>
-                    <Link href={"/sign-in"}>Sign in</Link>
-                </li>
                 <li className="hidden sm:block">
                     <Link href={"/"}>Home</Link>
                 </li>
