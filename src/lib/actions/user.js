@@ -1,0 +1,42 @@
+import User from "../models/user.model";
+import { connect } from "../moongodb/mongoose";
+export const createOrUpdateUser = async (
+    id,
+    first_name,
+    last_name,
+    image_url,
+    email_addresses
+) => {
+    try {
+        // connect to mongoose using function from mongodb/mongoose
+        await connect();
+        // findOneAndUpdate requres 2 params, the ID to find and the data to
+        // update
+        const user = await User.findOneAndUpdate(
+            { clerkId: id },
+            {
+                $set: {
+                    firstName: first_name,
+                    lastName: last_name,
+                    profilePicture: image_url,
+                    email: email_addresses[0].email_address,
+                },
+            },
+            //upsert means when the information provided is new, it will be
+            //inserted into the database instead of update
+            { upsert: true, new: true }
+        );
+        return user;
+    } catch (error) {
+        console.error(`Error creating or updating user:`, error);
+    }
+};
+
+export const deleteUser = async (user) => {
+    try {
+        await connect();
+        await User.findOneAndDelete({ clerkId: user.clerkId });
+    } catch (error) {
+        console.error(`Error creating or updating user:`, error);
+    }
+};
