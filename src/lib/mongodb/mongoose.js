@@ -6,16 +6,16 @@ export const connect = async () => {
         console.log("MongoDB already connected");
         return;
     }
-    
+
     try {
         await mongoose.connect(process.env.MONGODB_URI, {
-            dbName: "next-imdb-clerk",
+            dbName: "NextJS-Movie-App",
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
         initialized = true;
-        console.log("MongoDB connected");
+        console.log("Connected to MongoDB");
     } catch (error) {
-        console.log("MongoDB connection error:", error);
+        console.log("MongoDB error: ", error);
     }
 };

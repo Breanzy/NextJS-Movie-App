@@ -4,7 +4,6 @@ const favSchema = new mongoose.Schema({
     movieId: {
         type: String,
         required: true,
-        unique: true,
     },
     title: {
         type: String,
@@ -15,10 +14,14 @@ const favSchema = new mongoose.Schema({
         required: true,
     },
     dateReleased: {
-        type: String,
+        type: Date,
         required: true,
     },
-    poster: {
+    rating: {
+        type: Number,
+        required: true,
+    },
+    image: {
         type: String,
         required: true,
     },
@@ -56,5 +59,5 @@ const userSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-const User = mongoose.models.User || mongoose.models("User", userSchema);
+const User = mongoose.models.User || mongoose.model("User", userSchema);
 export default User;
