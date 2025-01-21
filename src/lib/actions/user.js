@@ -1,5 +1,5 @@
 import User from "../models/user.model";
-import { connect } from "../moongodb/mongoose";
+import { connect } from "../mongodb/mongoose";
 export const createOrUpdateUser = async (
     id,
     first_name,
@@ -28,15 +28,14 @@ export const createOrUpdateUser = async (
         );
         return user;
     } catch (error) {
-        console.error(`Error creating or updating user:`, error);
+        console.log("Error: Could not create or update user:", error);
     }
 };
-
-export const deleteUser = async (user) => {
+export const deleteUser = async (id) => {
     try {
         await connect();
-        await User.findOneAndDelete({ clerkId: user.clerkId });
+        await User.findOneAndDelete({ clerkId: id });
     } catch (error) {
-        console.error(`Error creating or updating user:`, error);
+        console.log("Error: Could not delete user:", error);
     }
 };
