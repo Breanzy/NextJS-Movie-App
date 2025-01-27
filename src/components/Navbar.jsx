@@ -4,7 +4,7 @@ export default function Navbar() {
         <div className="flex dark:bg-gray-600 bg-amber-100 p-4 lg:text-lg justify-center gap-6">
             <NavbarItem title="Trending" param="trending" />
             <NavbarItem title="Top Rated" param="rated" />
-            I just want green heheheh
+            I'll get back on the grind i swears just not noww
         </div>
     );
 }
