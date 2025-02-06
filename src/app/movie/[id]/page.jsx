@@ -7,6 +7,7 @@ export default async function MoviePage({ params }) {
         `https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.API_KEY}`
     );
     const movie = await res.json();
+
     if (!res.ok) {
         <div className="text-center mt-10">
             <h1 className="text-xl my-5"> Movie not available</h1>
@@ -48,7 +49,7 @@ export default async function MoviePage({ params }) {
                         title={movie.title || movie.name}
                         image={movie.backdrop_path || movie.poster_path}
                         overview={movie.overview}
-                        releaseDate={movie.rlease_date || movie.first_air_date}
+                        releaseDate={movie.release_date || movie.first_air_date}
                         voteCount={movie.vote_count}
                     />
                 </div>
