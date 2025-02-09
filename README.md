@@ -3,11 +3,10 @@
   <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGF0NGI0eG5xYXZpZnRhYWlnY2Rma3IwNG80YWRmMnJubno0aDNtYyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/s6tV5ItdF8HDPJN5PR/giphy.gif"/>
 </p>
 
-
-# NextJS Movie Website
+# 🎬NextJS Movie Website
 
 ## Overview
-This is a **dynamic** and **responsive** movie website that allows users to explore **recent movie releases**, **top-rated movies**, and search through a vast database of films.** Users can create personalized favorite lists and enjoy a seamless browsing experience with built-in **light and dark themes**.
+A movie catalog website built with MERN, Next.js, and Clerk authentication, featuring various movie collections powered by the TMDB API for seamless browsing.
 
 ## Features
 - 🎥 **Movie Database Integration**: Powered by [TMDB API](https://www.themoviedb.org/), allowing access to a vast collection of movie titles and metadata.
@@ -54,9 +53,5 @@ Ensure you have the following installed:
    ```
 5. 🌐 Open the project in your browser at `http://localhost:3000`.
 
-## 🚢 Deployment
-The project is optimized for deployment on **Vercel**. To deploy:
-1. **Push your code to GitHub**.
-2. **Link your repository to Vercel**.
-3. **Set up environment variables on Vercel**.
-4. **Deploy and enjoy!** 🎉
+## Live Server:
+https://next-js-movie-app-three.vercel.app
